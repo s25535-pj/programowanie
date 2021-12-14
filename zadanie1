@@ -42,9 +42,7 @@ int main()
     cout <<"4. Funkcja void iloczyn()"<<endl;
     cout <<"0. Wyjscie/exit"<<endl2;
     cin >>wybor;
-
     cout <<"Wybrales: "<<wybor<<endl;
-
 
     while(wybor!=0)
     {
@@ -58,14 +56,12 @@ int main()
             cin>>b;
             cout<<"Wynik: "<<iloczyn1(a,b)<<endl;
             break;
-
             case 2:
             {
                 cout<<"Podaj liczby a, b"<<endl2;
                 cout<<"Wynik: "<<iloczyn2()<<endl;
                 break;
             }
-
             case 3:
             {
                 int a,b;
@@ -73,7 +69,6 @@ int main()
                 iloczyn3(a,b);
                 break;
             }
-
             case 4:
             {
                 cout<<"Podaj liczby a, b"<<endl2;
@@ -89,9 +84,7 @@ int main()
         cout<<endl;
         cout <<"Z jakiej fuckji chcesz skorzystac" << endl2;
         cin >>wybor;
-
     }
-
 return 0;
 }
 
