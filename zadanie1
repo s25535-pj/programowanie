@@ -1,0 +1,97 @@
+#include <iostream>
+#define endl2 "\n\n"
+
+using namespace std;
+
+int iloczyn1(int a,int b)
+{
+    return a*b;
+}
+
+int iloczyn2()
+{
+    int a,b;
+    cin>>a;
+    cin>>b;
+    return a*b;
+}
+
+void iloczyn3(int a,int b)
+{
+    cin>>a;
+    cin>>b;
+    cout<<"Wynik: "<<a*b<<endl;
+}
+
+void iloczyn4()
+{
+    int a,b;
+    cin>>a;
+    cin>>b;
+    cout<<"Wynik: "<<a*b<<endl;
+}
+
+int main()
+{
+    int wybor;
+    cout <<endl;
+    cout <<"Z jakiej fuckji chcesz skorzystac" << endl2;
+    cout <<"1. Funkcja int iloczyn(int a,int b)"<<endl;
+    cout <<"2. Funkcja int iloczyn()"<<endl;
+    cout <<"3. Funkcja void iloczyn(int a,int b)"<<endl;
+    cout <<"4. Funkcja void iloczyn()"<<endl;
+    cout <<"0. Wyjscie/exit"<<endl2;
+    cin >>wybor;
+
+    cout <<"Wybrales: "<<wybor<<endl;
+
+
+    while(wybor!=0)
+    {
+        switch(wybor)
+        {
+            case 1:
+        {
+            int a,b;
+            cout<<"Podaj liczby a, b"<<endl2;
+            cin>>a;
+            cin>>b;
+            cout<<"Wynik: "<<iloczyn1(a,b)<<endl;
+            break;
+
+            case 2:
+            {
+                cout<<"Podaj liczby a, b"<<endl2;
+                cout<<"Wynik: "<<iloczyn2()<<endl;
+                break;
+            }
+
+            case 3:
+            {
+                int a,b;
+                cout<<"Podaj liczby a, b"<<endl2;
+                iloczyn3(a,b);
+                break;
+            }
+
+            case 4:
+            {
+                cout<<"Podaj liczby a, b"<<endl2;
+                iloczyn4();
+                break;
+            }
+            default:
+            {
+                cout<<"Nie ma takiej opcji"<<endl;
+            }
+        }
+        }
+        cout<<endl;
+        cout <<"Z jakiej fuckji chcesz skorzystac" << endl2;
+        cin >>wybor;
+
+    }
+
+return 0;
+}
+
