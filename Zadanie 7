@@ -1,0 +1,125 @@
+#include <iostream>
+#include <time.h>
+#define endl2 "\n\n"
+
+using namespace std;
+
+
+void full(int n,int tab[10][10])
+{
+    srand(time(NULL));
+    for(int j=0; j<n; j++)
+    {
+        for(int i=0; i<n; i++)
+        {
+            tab[i][j]=rand()%10;
+        }
+    }
+}
+
+void show(int n,int tab[10][10])
+{
+    for(int j=0; j<n; j++)
+    {
+        cout<<j+1<<". ";
+        for(int i=0; i<n; i++)
+        {
+            cout<<"|"<<i+1<<"|"<<j+1<<"|"<<"="<<tab[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void look(int n, int tab[10][10])
+{
+    int max=tab[0][0];
+    int bufor[100];
+
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(max<=tab[i][j])
+            {
+                max=tab[i][j];
+            }
+        }
+    }
+    cout<<"Najwiekszy element tablicy to: "<<max<<endl;
+    cout<<"Jestem tutaj! ";
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(tab[i][j]==max)
+            {
+                cout<<"|"<<i+1<<"|"<<j+1<<"|, ";
+            }
+        }
+    }
+}
+
+int przekatna(int n, int tab[10][10])
+{
+    int suma=0;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(i==j)
+            {
+                suma=suma+tab[i][j];
+            }
+        }
+    }
+    return suma;
+}
+
+void zamiana (int n,int p,int k,int tab[10][10])
+{
+    for(int j=0; j<n; j++)
+    {
+        swap(tab[j][k-1],tab[j][p-1]);
+    }
+}
+
+int main()
+{
+    int tablica[10][10],n,p,k;
+    cout<<"Podaj wymiar n: ";
+    cin>>n;
+
+    if(n>0)
+    {
+        cout<<endl;
+
+        full(n,tablica);
+        cout<<"Zawartosc tablicy:"<<endl2;
+
+        show(n,tablica);
+        cout<<endl2;
+
+        cout<<"Ktore wiersze zamienic?"<<endl;
+        cin>>p;
+        cin>>k;
+        cout<<"Wiersze: "<<p<<" i "<<k<<endl;
+
+        if(p<=n&&p>0 && k<=n&&k>0)
+        {
+            zamiana(n,p,k,tablica);
+            cout<<"Tablica po zamianie"<<endl2;
+            show(n,tablica);
+            cout<<endl2;
+        }
+        else cout<<"Niepoprawna wartosc wierszy. Nie wykonuje podmiany"<<endl2;
+
+        look(n,tablica);
+        cout<<endl2;
+
+        cout<<"Suma liczb po przekatnej: "<<przekatna(n,tablica);
+        cout<<endl;
+    }
+    else cout<<endl<<"Niepoprawna wartosc."<<endl;
+
+
+}
